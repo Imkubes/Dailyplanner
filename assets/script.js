@@ -1,3 +1,7 @@
-console.log(document.body.children[0].children[0]);
-var todaysDate = moment().format('dddd');
-document.body.children[0].children[0].textContent = '<h1>todaysDate</h1>';
+var todaysDateEl = $('.todayDate');
+var dateEl = $('<h1>');
+var dateToday = moment().format('dddd');
+
+dateEl.text(dateToday);
+
+todaysDateEl.append(dateEl);
