@@ -19,7 +19,7 @@ textarea {
     resize: none;
 }
 
-#dataEntry {
+.dataEntry {
     background-color: lightgray;
     margin-top: 3px;
     border-left: 5px solid black;
@@ -39,4 +39,16 @@ textarea {
 
 .container {
     margin-top: 100px;
+}
+
+.past {
+    background-color: rgb(201, 67, 67);
+}
+
+.present {
+    background-color: rgb(102, 181, 102);
+}
+
+.future {
+    background-color: rgb(200, 200, 40);
 }
