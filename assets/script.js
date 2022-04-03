@@ -37,6 +37,8 @@ if (currentHour >=23) {
     $("#5 .dataEntry").val(localStorage.getItem("5"));
 }
 
+setColor();
+
 function setColor() {
     var hour = $(this).parent().attr('id');
 
@@ -55,4 +57,3 @@ function setColor() {
     }
 }
 
-setColor();
