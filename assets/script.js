@@ -1,4 +1,7 @@
 //Setting variables and connecting it with html
+var currentHour = moment().hours();
+//console.log(currentHour);
+var container = $('.container');
 var todaysDateEl = $('.todayDate');
 var dateEl = $('<h1>');
 //using the moment api to get today's date
@@ -9,10 +12,32 @@ dateEl.attr('class', 'dateCenter');
 dateEl.text(dateToday);
 //Appending my h1 tag to the header class
 todaysDateEl.append(dateEl);
-
+//linking my save button
 var saveBtn = $('.saveBtn');
-var textEnteredEl = $('.dataEntry');
-
+// when user clicks save button, data is saved to local storage
 saveBtn.on('click', function(){
-    
+    var textEnteredEl = $(this).siblings('#dataEntry').val();
+   // console.log(textEnteredEl);
+    var hourKey = $(this).parent().attr('id');
+    localStorage.setItem(hourKey, textEnteredEl);
 })
+
+if (currentHour > 9) {
+    
+}
+
+//If it is the next day, clears the local storage inputs to start a blank schedule
+if (currentHour >=23) {
+    localStorage.clear();
+} else {
+    // Otherwise, display users input for time blocks
+    $("#9 #dataEntry").val(localStorage.getItem("9"));
+    $("#10 #dataEntry").val(localStorage.getItem("10"));
+    $("#11 #dataEntry").val(localStorage.getItem("11"));
+    $("#12 #dataEntry").val(localStorage.getItem("12"));
+    $("#1 #dataEntry").val(localStorage.getItem("1"));
+    $("#2 #dataEntry").val(localStorage.getItem("2"));
+    $("#3 #dataEntry").val(localStorage.getItem("3"));
+    $("#4 #dataEntry").val(localStorage.getItem("4"));
+    $("#5 #dataEntry").val(localStorage.getItem("5"));
+}
