@@ -9,3 +9,10 @@ dateEl.attr('class', 'dateCenter');
 dateEl.text(dateToday);
 //Appending my h1 tag to the header class
 todaysDateEl.append(dateEl);
+
+var saveBtn = $('.saveBtn');
+var textEnteredEl = $('.dataEntry');
+
+saveBtn.on('click', function(){
+    
+})
