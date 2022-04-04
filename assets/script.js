@@ -30,26 +30,30 @@ if (currentHour >=23) {
     $("#10 .dataEntry").val(localStorage.getItem("10"));
     $("#11 .dataEntry").val(localStorage.getItem("11"));
     $("#12 .dataEntry").val(localStorage.getItem("12"));
-    $("#1 .dataEntry").val(localStorage.getItem("1"));
-    $("#2 .dataEntry").val(localStorage.getItem("2"));
-    $("#3 .dataEntry").val(localStorage.getItem("3"));
-    $("#4 .dataEntry").val(localStorage.getItem("4"));
-    $("#5 .dataEntry").val(localStorage.getItem("5"));
+    $("#13 .dataEntry").val(localStorage.getItem("13"));
+    $("#14 .dataEntry").val(localStorage.getItem("14"));
+    $("#15 .dataEntry").val(localStorage.getItem("15"));
+    $("#16 .dataEntry").val(localStorage.getItem("16"));
+    $("#17 .dataEntry").val(localStorage.getItem("17"));
 }
 
 setColor();
-
+// Color based on time function
 function setColor() {
-    var hour = $(this).parent().attr('id');
-
+    //setting the hour to compare to the hour ID in html
+    var hour = $('.dataEntry').parent().attr('id');
+   // console.log(hour);
+// if current hour is greater than hour on schedule, add class future
     if (currentHour > hour) {
         $('.dataEntry').removeClass('past');
         $('.dataEntry').removeClass('present');
         $('.dataEntry').addClass('future');
+// if current hour == hour on schedule, add class present
     } else if (currentHour == hour) {
         $('.dataEntry').removeClass('future');
         $('.dataEntry').removeClass('past');
         $('.dataEntry').addClass('present');
+// if current hour is less than what is on schedule, add class past
     } else {
         $('.dataEntry').removeClass('present');
         $('.dataEntry').removeClass('future');
@@ -57,3 +61,4 @@ function setColor() {
     }
 }
 
+//console.log(currentHour);
